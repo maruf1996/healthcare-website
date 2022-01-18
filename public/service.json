@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Total Health Means Optimal Oral Health",
+        "description": "Using the latest in dental technology, each office has a team of dentists, oral surgeons, gums specialists, orthodontists and a full implant center for your convenience. We use all organic materials and mercury-free fillings as well as herbal tinctures to promote natural healing. And with CEREC 3D imagining, our specialists design and create your crown or implant while you wait.",
+        "img": "https://i.ibb.co/2yt0Vky/services1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Holistic Dentistry",
+        "description": "More than 60 years ago, a dentist named Weston Price traveled the globe photographing and documenting the connection between healthy bodies and mouths. Around the planet Price consistently found that people and cultures with excellent oral health and beautiful smiles were practically free of bodily disease. That simple principle is the heart of Total Health Dental Care. It’s also why we created our own line of herbal formulas. Dr. H. & Co. is available in-office and on Amazon. Every Total Health Dental Care new patient get a free bottle of Refresh All-Natural Herbal Mouthwash.",
+        "img": "https://i.ibb.co/YB28Y7g/services2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Restorative Dentistry",
+        "description": "The term “restorative dentistry” refers to treatments or procedures intended to restore health and function to the teeth and mouth. Restorative dentistry services address teeth that are broken, decayed, otherwise damaged or missing. By extension, it aids your total health through better digestion, prevention of diseases that can start in untreated areas and improved emotional wellbeing. Some examples of restorative dentistry are crowns, bridges and implants..",
+        "img": "https://i.ibb.co/H2wVpgF/services3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Cosmetic Dentistry",
+        "description": "Although restorative dentistry and cosmetic dentistry overlap, the main difference between the two is their focus and the level of expertise of the dentist. At Total Health Dental Care our team has the training and experience to go beyond the restoration procedures to make sure your smile engenders confidence, self-esteem and overall happiness.Examples of cosmetic dentistry include correcting alignment, teeth whitening and using veneers or crowns to cover or cap teeth.",
+        "img": "https://i.ibb.co/JcwXHFD/services4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Emergency & Urgent Care",
+        "description": "When you need immediate attention, Total Health Dental Care is there! Give us a call day or night – most dental emergencies seem to occur after-hours. We don’t our patients to be in pain. Our team of dentists and specialists will examined, diagnose and stabilize your condition, and then determine the best course of action for your immediate wellbeing. If necessary, we offer oral or IV sedation so you’ll feel comfortable from start to finish.",
+        "img": "https://i.ibb.co/2YwC52s/sevices5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Emergency Home Care",
+        "description": "For most dental emergencies (e.g. toothaches, loose or lost fillings and crowns) you should gently brush and rinse with warm salt water immediately. For temporary pain relief, ibuprofen is recommended. Call Total Health Dental Care as soon as possible to diagnose and repair the problem. For a knocked-out permanent tooth, recover the tooth making sure to hold it by the crown (top) and not the root end. Do not rinse or handle the tooth more than necessary. Reinsert the tooth in the socket and hold it in place using a clean piece of gauze or cloth. If the tooth cannot be reinserted, carry it in a cup containing milk or water or just keep it in the side of your cheek. Time is essential – Contact us or see a dentist immediately!",
+        "img": "https://i.ibb.co/s5x0kJ9/services6.jpg"
+    }
+]

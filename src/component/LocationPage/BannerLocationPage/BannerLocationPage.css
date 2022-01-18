@@ -1,0 +1,29 @@
+.location_banner_img {
+    background-image: url("../../../img/location.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+.location_banner_img h1 {
+    padding-top: 250px;
+    font-size: 48px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 600;
+    color: azure;
+}
+
+@media only screen and (max-width:688px) {
+    .location_banner_img {
+        height: 180px;
+    }
+    
+    .location_banner_img h1 {
+        padding-top: 50px;
+        font-size: 25px;
+        font-family: 'Fira Sans', sans-serif;
+        font-weight: 600;
+        color: azure;
+    }
+      
+}

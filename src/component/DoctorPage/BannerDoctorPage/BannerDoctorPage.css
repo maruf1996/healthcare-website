@@ -1,0 +1,29 @@
+.doctor_banner_img {
+    background-image: url("../../../img/doctor_home_page.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+.doctor_banner_img h1 {
+    padding-top: 250px;
+    font-size: 48px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 600;
+    color: azure;
+}
+
+@media only screen and (max-width:688px) {
+    .doctor_banner_img {
+        height: 180px;
+    }
+    
+    .doctor_banner_img h1 {
+        padding-top: 70px;
+        font-size: 25px;
+        font-family: 'Fira Sans', sans-serif;
+        font-weight: 600;
+        color: azure;
+    }
+      
+}
