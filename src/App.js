@@ -5,6 +5,9 @@ import NotFound from './component/NotFound/NotFound';
 import DoctorHomePage from './component/DoctorPage/DoctorHomePage/DoctorHomePage';
 import Location from './component/LocationPage/Location/Location';
 import Careear from './component/Careears/Careear/Careear';
+import Login from './component/Login/Login';
+import Register from './component/Login/Register';
+import ServiceDetails from './component/HomePage/ServiceDetails/ServiceDetails';
 
 function App() {
   return (
@@ -25,6 +28,15 @@ function App() {
           </Route>
           <Route path="/careears">
             <Careear></Careear>
+          </Route>
+          <Route path="/service/:serviceId">
+            <ServiceDetails></ServiceDetails> 
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
           </Route>
           <Route  path="*">
             <NotFound></NotFound>

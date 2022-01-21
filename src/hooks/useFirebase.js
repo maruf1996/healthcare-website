@@ -1,16 +1,53 @@
-// import { initializeApp } from "firebase/app";
-// import firebaseConfig from "./firebase.config";
-// import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider,GithubAuthProvider,signInWithPopup,signOut,onAuthStateChanged } from "firebase/auth";
+import { useEffect } from "react";
+import { useState } from "react";
+import initializeAuthentication from "../Firebase/firebase.init";
 
-// initializeApp(firebaseConfig);
-// const googleProvider = new GoogleAuthProvider();
+initializeAuthentication();
 
-// const useFirebase=()=>{
+const useFirebase=()=>{
+   const [user,setUser]=useState({});
 
-//     const googleProvider = getAuth();
+const auth = getAuth();
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
-// }
+const signInUsingGoogle=()=>{
+    return signInWithPopup(auth, googleProvider)
+}
+
+const signInUsingGithub=()=>{
+   return signInWithPopup(auth, githubProvider)
+}
 
 
-// export default useFirebase;
+useEffect(()=>{
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUser(user);
+        } else {
+            setUser('');
+        }
+      });
+      return () => unsubscribed;
+},[])
+
+
+const logOut=()=>{
+    signOut(auth)
+    .then()
+}
+
+return {
+    user,
+    setUser,
+    signInUsingGoogle,
+    signInUsingGithub,
+    logOut
+}
+
+}
+
+
+export default useFirebase;
 
