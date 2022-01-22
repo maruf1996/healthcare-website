@@ -7,8 +7,8 @@ import useAuth from '../../hooks/useAuth';
 
 
 const Register = () => {
-    const {setUser,signInUsingGoogle,signInUsingGithub}=useAuth();
-
+    const {setUser,setEmail,setPassword,setName,createNewAccount,signInUsingGoogle,signInUsingGithub}=useAuth();
+    
     const history=useHistory();
     const location=useLocation();
     const url=location.state?.from || "/home";
@@ -29,23 +29,42 @@ const Register = () => {
         })
     }
 
-    // const handleEmaileChange=e=>{
-    //     setEmail(e.target.value);
-    // }
+    const handleGetName=e=>{
+        setName(e.target.value);
+        console.log(e.target.value);
+    }
 
-    // const handlePasswordChange=e=>{
-    //     setPassword(e.target.value);
-    // }
+    const handleGetEmail=e=>{
+        setEmail(e.target.value);
+        console.log(e.target.value);
+    }
+
+    const handleGetPassword=e=>{
+        setPassword(e.target.value);
+        console.log(e.target.value);
+    }
+
+    const handleRegistration=e=>{
+        e.preventDefault();
+        createNewAccount()
+        .then((userCredential) => {
+            const user = userCredential.user;
+          })
+    }
+
     return (
         <div>
            <h2 className='mt-3 mb-3'>Please Register</h2>
 
-            <Form className='w-25 m-auto mb-3' >
+            <Form className='w-25 m-auto mb-3' onSubmit={handleRegistration}>
+            <Form.Group className="mb-3" controlId="formGroupName">
+                <Form.Control onBlur={handleGetName} type="text" placeholder="Enter Your Name" required/>
+            </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
-                <Form.Control type="email" placeholder="Enter Your email" required/>
+                <Form.Control onBlur={handleGetEmail} type="email" placeholder="Enter Your email" required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupPassword">
-                <Form.Control type="password" placeholder="Password" required/>
+                <Form.Control onBlur={handleGetPassword} type="password" placeholder="Enter Your Password" required/>
             </Form.Group>
             <input type="submit" className='btn btn-primary' value="Register" />
             </Form>

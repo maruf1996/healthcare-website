@@ -7,7 +7,7 @@ const Service = (props) => {
         <div className="col-md-6 my-3">
             <img src={img} alt="" className="rounded img-fluid"/>
             <h3>{name}</h3>
-            <blockquote className="text-start mb-3"> {description.slice(0,290)}</blockquote>
+            <p className="mb-3" style={{textAlign:"justify", fontWeight:"500"}}> {description.slice(0,290)}</p>
             <Link to={`/service/${id}`}>
                 <button style={{background:'#ee2c2c',border:'white',padding:'13px',color:'white', fontWeight:'500'}}>Service Details</button>
             </Link>

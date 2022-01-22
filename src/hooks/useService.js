@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 
 
 const useService=()=>{
-    const [serviceItem,setServiceItem]=useState();
+    const [serviceItem,setServiceItem]=useState([]);
 
     useEffect(()=>{
-        fetch('.//service.json')
+        fetch('/service.json')
         .then(res=>res.json())
         .then(data=>setServiceItem(data))
     },[]);
