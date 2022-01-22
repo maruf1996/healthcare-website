@@ -1,19 +1,21 @@
-import { getAuth, GoogleAuthProvider,GithubAuthProvider,signInWithPopup,signOut,onAuthStateChanged,createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, GoogleAuthProvider,GithubAuthProvider,signInWithPopup,signOut,onAuthStateChanged,createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile} from "firebase/auth";
 import { useEffect } from "react";
 import { useState } from "react";
 import initializeAuthentication from "../Firebase/firebase.init";
 
 initializeAuthentication();
 
+const auth = getAuth();
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
+
 const useFirebase=()=>{
    const [user,setUser]=useState({});
    const [email,setEmail]=useState('');
    const [password,setPassword]=useState('');
    const [name,setName]=useState('');
+   const [isLoading,setIsLoading]=useState(true);
 
-const auth = getAuth();
-const googleProvider = new GoogleAuthProvider();
-const githubProvider = new GithubAuthProvider();
 
 const signInUsingGoogle=()=>{
     return signInWithPopup(auth, googleProvider)
@@ -27,6 +29,17 @@ const createNewAccount=()=>{
    return createUserWithEmailAndPassword(auth, email, password)
 }
 
+const signInUsingEmail=(email,password)=>{
+    return signInWithEmailAndPassword(auth, email, password);
+}
+
+const updateName=()=>{
+    updateProfile(auth.currentUser, {
+        displayName:name})
+        .then(() => {
+      })
+}
+
 useEffect(()=>{
     const unsubscribed = onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -34,6 +47,7 @@ useEffect(()=>{
         } else {
             setUser('');
         }
+        setIsLoading(false);
       });
       return () => unsubscribed;
 },[])
@@ -45,15 +59,16 @@ const logOut=()=>{
 }
 
 return {
-    user,
-    setUser,
-    setEmail,
-    setPassword,
-    setName,
+    user,setUser,
+    setEmail,email,
+    setPassword,password,
+    setName,updateName,
     createNewAccount,
+    signInUsingEmail,
     signInUsingGoogle,
     signInUsingGithub,
-    logOut
+    logOut,
+    isLoading,setIsLoading
 }
 
 }

@@ -3,7 +3,7 @@ import React from 'react';
 const CareearParagraph = () => {
     return (
         <div className="">
-            <h1 className="mt-5 fs-2">Careers at Total Dental Care</h1>
+            <h1 className="mt-5 fs-2">Carears at Total Dental Care</h1>
             <h3 className="mt-2 mb-4 fs-5 text-secondary">Apply Now and Join Our Growing Team!</h3>
 
             <div className="container">

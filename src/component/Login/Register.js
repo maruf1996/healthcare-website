@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 
 
 const Register = () => {
-    const {setUser,setEmail,setPassword,setName,createNewAccount,signInUsingGoogle,signInUsingGithub}=useAuth();
+    const {setUser,setEmail,setPassword,setName,createNewAccount,signInUsingGoogle,signInUsingGithub,setIsLoading,updateName}=useAuth();
     
     const history=useHistory();
     const location=useLocation();
@@ -16,16 +16,24 @@ const Register = () => {
     const signInWithGoogle=()=>{
         signInUsingGoogle()
         .then(result=>{
+            setIsLoading(true);
             setUser(result.user);
             history.push(url);
+        })
+        .finally(()=>{
+            setIsLoading(false)
         })
     }
 
     const signInWithGithub=()=>{
         signInUsingGithub()
         .then(result=>{
+            setIsLoading(true);
             setUser(result.user);
             history.push(url);
+        })
+        .finally(()=>{
+            setIsLoading(false)
         })
     }
 
@@ -47,9 +55,15 @@ const Register = () => {
     const handleRegistration=e=>{
         e.preventDefault();
         createNewAccount()
-        .then((userCredential) => {
-            const user = userCredential.user;
+        .then((result) => {
+            setIsLoading(true);
+            setUser(result.user);
+            history.push(url);
+            updateName();
           })
+          .finally(()=>{
+            setIsLoading(false)
+        })
     }
 
     return (
